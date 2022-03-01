@@ -22,9 +22,9 @@ ReactDOM.render(
     <BrowserRouter>
       <Header>
         <Switch>
+          <Route exact path='/' component={CoffeeIndex} />
           <Route path="/coffee-quiz" component={CoffeeQuiz} />
-          <Route path='/recipe' component={RecipeDetails} />
-          <Route path='/' component={CoffeeIndex} />
+          <Route path='/recipe/:id' component={RecipeDetails} />    
         </Switch>
       </Header>
     </BrowserRouter>
