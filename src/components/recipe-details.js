@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import renderMap from './google-maps';
 
 const RecipeDetails = (props) => {
   const recipe = useSelector(({ coffee }) =>
@@ -46,6 +47,7 @@ const RecipeDetails = (props) => {
           </tr>
         </tbody>
       </table>
+      {renderMap()}
     </div>
   );
 };
