@@ -1,37 +1,55 @@
-import React from "react";
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchCoffee } from "../actions";
+import { useSelector } from 'react-redux';
+import renderMap from './google-maps';
 
 const RecipeDetails = (props) => {
-  const posts = useSelector((state) => state.coffee);
-  const dispatch = useDispatch();
+  const recipe = useSelector(({ coffee }) =>
+    coffee.find((r) => r.id === parseInt(props.match.params.id))
+  );
 
-  useEffect(() => {
-    dispatch(fetchCoffee());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fetchCoffee]);
-
-  const recipe = useSelector(() => {
-    return posts.find((recipe) => {
-      return recipe.id === parseInt(props.match.params.id)
-    })
-  })
-
-  console.log(recipe)
   return (
-      <div>
-        <Link to="/">Back To Index</Link>
-          <h1>Recipe</h1>
-          <hr></hr>
-          <p>1. {recipe.title}</p>
-          <p>2. </p>
-          <p>3. </p>
-          <p>4. </p>
-          <p>5. </p>
-      </div>
-    )
-}
+    <div>
+      <Link to="/">Back To Index</Link>
+      <h1>{recipe.method} Recipe</h1>
+      <hr />
+      <table className="table">
+        <tbody>
+          <tr>
+            <th scope="row">Grind</th>
+            <td>{recipe.recipe.grind}</td>
+          </tr>
+          <tr>
+            <th scope="row">Grams of Coffee</th>
+            <td>{recipe.recipe.grams_coffee}</td>
+          </tr>
+          <tr>
+            <th scope="row">Grams of Water</th>
+            <td>{recipe.recipe.grams_water}</td>
+          </tr>
+          <tr>
+            <th scope="row">Water Temp</th>
+            <td>{recipe.recipe.temp_water}</td>
+          </tr>
+          <tr>
+            <th scope="row">Bloom Weight</th>
+            <td>{recipe.recipe.bloom_weight}</td>
+          </tr>
+          <tr>
+            <th scope="row">Bloom Time</th>
+            <td>{recipe.recipe.bloom_time}</td>
+          </tr>
+          <tr>
+            <th scope="row">Total Brew Time</th>
+            <td>{recipe.recipe.total_brew_time}</td>
+          </tr>
+        </tbody>
+      </table>
+      {renderMap()}
+    </div>
+  );
+};
 
 export default RecipeDetails;
