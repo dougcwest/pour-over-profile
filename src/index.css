@@ -1,6 +1,7 @@
 .page-header {
   margin-top: 40px;
   padding-bottom: 25px;
+  text-align: center;
 }
 
 .btn {
@@ -30,11 +31,9 @@
   height: 20px;
   margin-bottom: 5px;
 }
-.card-img {
+.card-img-fluid {
   width: 100%;
-  height: 15vw;
-  background-color: #faf9f6;
-  object-fit: cover;
+  margin-left: 10px;
 }
 
 .hide {

@@ -6,7 +6,7 @@ const defaultState = [
     description: 'Brew Charactaristics: yada yada yada yada',
     coffee: 'Single Origin: Peru, Ethiopia, Guatemala',
     roast: 'light to medium',
-    main_icon: 'https://i.ibb.co/zXYgZqQ/chemex-icon-transp.png',
+    main_icon: 'https://i.ibb.co/D9qqt4r/chemex-icon-white.png',
     bean_icon: 'https://i.ibb.co/f2FNd2F/single-bean-icon-transp.png',
     img_url:
       'https://i.pinimg.com/originals/a9/0b/d5/a90bd55fa1e33dea95b7476b542faf37.png',
@@ -27,7 +27,7 @@ const defaultState = [
     description: 'Brew Charactaristics: yada yada yada yada',
     coffee: 'Blend / Espresso Blend',
     roast: 'medium to dark',
-    main_icon: 'https://i.ibb.co/WvNTDKT/aeropress-icon-transp.png',
+    main_icon: 'https://i.ibb.co/9ZcxDHb/aeropress-icon-white.png',
     bean_icon: 'https://i.ibb.co/f2FNd2F/single-bean-icon-transp.png',
     img_url:
       'https://www.canterburycoffee.com/wp-content/uploads/2018/01/Aeropress-trends-e1515436288798.jpg',
@@ -49,7 +49,7 @@ const defaultState = [
     coffee: 'Blend / Single Origin: Brazil, Costa Rica',
     roast: 'medium',
     email: 'thebossh@dundermif.com',
-    main_icon: 'https://i.ibb.co/Vw2gwqS/clever-icon-transp.png',
+    main_icon: 'https://i.ibb.co/NnmGPnY/clever-icon-white2.png',
     bean_icon: 'https://i.ibb.co/f2FNd2F/single-bean-icon-transp.png',
     img_url:
       'https://images.squarespace-cdn.com/content/v1/545fa284e4b098772e50fd00/1604957203461-KBY9UH6E4KJWIX6LNT63/Clever%2BCoffee%2BDripper.jpg',

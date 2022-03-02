@@ -13,9 +13,7 @@ const CoffeeIndex = () => {
   }, [fetchCoffee]);
   return (
     <div>
-      <div className="page-header">
-        <h1 className="text-primary">Pour-Over Profile</h1>
-        <br />
+      <div className="col-12 col-md-8 d-flex align-items-center">
         <h4 className="text-muted">
           Take the Coffee Quiz below to get a custom recipe based on your
           preferences.
@@ -31,7 +29,7 @@ const CoffeeIndex = () => {
               <div className="row no-gutters">
                 <div className="col-4">
                   <img
-                    className="card-img rounded-0"
+                    className="card-img-fluid rounded-0"
                     src={c.main_icon}
                     alt="Contact Avatar"
                   />
@@ -55,13 +53,13 @@ const CoffeeIndex = () => {
                       <i className="fa fa-info-circle fa-lg" />{' '}
                       <em>{c.description}</em>
                     </p>
-                    <Link
+                    {/* <Link
                       className=" btn btn-warning btn-sm"
                       role="button"
                       to={`/${c.name}`}
                     >
                       View Recipe
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
