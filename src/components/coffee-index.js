@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { Modal, Button } from 'react-bootstrap';
+import NewModal from './modal';
 import { fetchCoffee } from '../actions';
 
 const CoffeeIndex = () => {
@@ -44,15 +45,7 @@ const CoffeeIndex = () => {
                       <i className="fa fa-fire fa-lg" />{' '}
                       <em>Roast: {c.roast}</em>
                     </p>
-                    <p className="card-text">
-                      <button
-                        className="btn btn-link text-left text-white"
-                        type="button"
-                      >
-                        <i className="fa fa-info-circle fa-lg" />{' '}
-                      </button>
-                      <em>{c.description}</em>
-                    </p>
+                    <p className="card-text">{NewModal()}</p>
                     {/* <Link
                       className=" btn btn-warning btn-sm"
                       role="button"
@@ -64,13 +57,24 @@ const CoffeeIndex = () => {
                 </div>
               </div>
             </div>
+            <div className="col-12 text-right">
+              <Link
+                className=" btn btn-link btn-sm"
+                role="button"
+                to="/recipe/2"
+              >
+                Sample Recipe
+              </Link>
+            </div>
           </div>
         ))}
       </div>
       <div className="col-12 col-md-8 d-flex align-items-center text-center">
-        <h4 className="text-dark">Find out which method works best for you!</h4>
+        <h4 className="find text-dark">
+          Find out which method works best for you!
+        </h4>
       </div>
-      <h6 className="text-primary">
+      <h6 className="take text-primary text-center">
         Take the coffee quiz below to get a custom recipe based on your
         preferences!
       </h6>
