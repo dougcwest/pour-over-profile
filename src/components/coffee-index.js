@@ -20,7 +20,7 @@ const CoffeeIndex = () => {
       </div>
       <div className="row row-cols-1 row-cols g-4">
         {coffee.map((c) => (
-          <div key={c.method} className="col-md-6 offset-md-3">
+          <div key={c.id} className="col-md-6 offset-md-3">
             <div className="text-white bg-secondary mb-3">
               <div className="row no-gutters">
                 <div className="col-4">
@@ -45,7 +45,9 @@ const CoffeeIndex = () => {
                       <i className="fa fa-fire fa-lg" />{' '}
                       <em>Roast: {c.roast}</em>
                     </p>
-                    <p className="card-text">{NewModal()}</p>
+                    <p className="card-text">
+                      <NewModal title={c.method} description={c.description} />
+                    </p>
                     {/* <Link
                       className=" btn btn-warning btn-sm"
                       role="button"

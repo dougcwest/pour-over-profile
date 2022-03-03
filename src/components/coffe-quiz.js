@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form } from 'react-bootstrap';
@@ -26,7 +27,8 @@ const CoffeeQuiz = (props) => {
       })
     );
 
-    // props.history.push('/recipe/4');
+    // eslint-disable-next-line react/destructuring-assignment, react/prop-types
+    props.history.push('/recipe/1');
   };
 
   return (

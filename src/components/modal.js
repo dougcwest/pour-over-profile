@@ -28,13 +28,13 @@ const NewModal = (props) => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            AeroPress
+            {/* eslint-disable-next-line react/destructuring-assignment, react/prop-types */}
+            {props.title}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          The fastest of these pour-over methods, AeroPress is known for its
-          versatility. Varying immersion time, grind, and plunge can produce a
-          range of results from bright and lively, to round and bold.
+          {/* eslint-disable-next-line react/destructuring-assignment, react/prop-types */}
+          {props.description}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
