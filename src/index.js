@@ -15,6 +15,7 @@ import CoffeeQuiz from './components/coffe-quiz';
 import RecipeDetails from './components/recipe-details';
 import Header from './components/header';
 import reducers from './reducers';
+import NavBar from './components/nav-bar';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -22,6 +23,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <Header>
+        <NavBar />
         <Switch>
           <Route exact path="/" component={CoffeeIndex} />
           <Route path="/coffee-quiz" component={CoffeeQuiz} />
