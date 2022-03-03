@@ -1,4 +1,4 @@
-import { FETCH_COFFEE } from '../actions';
+import { FETCH_COFFEE, CREATE_RECIPE } from '../actions';
 
 const defaultState = [
   {
@@ -19,6 +19,7 @@ const defaultState = [
       bloom_weight: '65g',
       bloom_time: '45 seconds',
       total_brew_time: '4 minutes, 30 seconds',
+      showModal: false,
     },
     id: 1,
   },
@@ -41,6 +42,7 @@ const defaultState = [
       bloom_weight: '100g',
       bloom_time: '15 seconds',
       total_brew_time: '2 minutes, 30 seconds',
+      showModal: false,
     },
     id: 2,
   },
@@ -63,6 +65,7 @@ const defaultState = [
       bloom_weight: '320g',
       bloom_time: '2 minutes',
       total_brew_time: '3 minutes, 45 seconds',
+      showModal: false,
     },
     id: 3,
   },
@@ -73,6 +76,8 @@ const coffeeReducer = function (state = defaultState, action) {
   switch (action.type) {
     case FETCH_COFFEE:
       return state;
+    case CREATE_RECIPE:
+      return [action.payload, ...state];
     default:
       return state;
   }

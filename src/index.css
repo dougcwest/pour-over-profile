@@ -30,6 +30,14 @@
   text-align: left !important;
 }
 
+.find {
+  padding: 15px;
+}
+
+.take {
+  padding: 15px;
+}
+
 .bean-icon {
   width: 20px;
   height: 20px;
@@ -42,6 +50,7 @@
 
 .quiz {
   margin-top: 7px;
+  margin-bottom: 15px;
   width: 50%;
 }
 
