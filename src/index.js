@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -14,6 +15,7 @@ import CoffeeQuiz from './components/coffe-quiz';
 import RecipeDetails from './components/recipe-details';
 import Header from './components/header';
 import reducers from './reducers';
+import NavBar from './components/nav-bar';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -21,6 +23,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <Header>
+        <NavBar />
         <Switch>
           <Route exact path="/" component={CoffeeIndex} />
           <Route path="/coffee-quiz" component={CoffeeQuiz} />
