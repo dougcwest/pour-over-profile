@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { fetchCoffee } from '../actions';
 
 const CoffeeIndex = () => {
@@ -14,13 +15,7 @@ const CoffeeIndex = () => {
   return (
     <div>
       <div className="col-12 col-md-8 d-flex align-items-center">
-        <h4 className="text-muted">
-          Take the Coffee Quiz below to get a custom recipe based on your
-          preferences.
-        </h4>
-        <Link className="quiz btn btn-warning" role="button" to="/new-contact">
-          Coffee Quiz <i className="fa fa-coffee" />
-        </Link>
+        <h4 className="text-dark">The Methods</h4>
       </div>
       <div className="row row-cols-1 row-cols g-4">
         {coffee.map((c) => (
@@ -36,7 +31,7 @@ const CoffeeIndex = () => {
                 </div>
                 <div className="col-8">
                   <div className="card-body">
-                    <h3 className="card-title">{c.method}</h3>
+                    <h3 className="card-title text-warning">{c.method}</h3>
                     <p className="card-text">
                       <img
                         className="bean-icon"
@@ -50,7 +45,12 @@ const CoffeeIndex = () => {
                       <em>Roast: {c.roast}</em>
                     </p>
                     <p className="card-text">
-                      <i className="fa fa-info-circle fa-lg" />{' '}
+                      <button
+                        className="btn btn-link text-left text-white"
+                        type="button"
+                      >
+                        <i className="fa fa-info-circle fa-lg" />{' '}
+                      </button>
                       <em>{c.description}</em>
                     </p>
                     {/* <Link
@@ -66,6 +66,18 @@ const CoffeeIndex = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="col-12 col-md-8 d-flex align-items-center text-center">
+        <h4 className="text-dark">Find out which method works best for you!</h4>
+      </div>
+      <h6 className="text-primary">
+        Take the coffee quiz below to get a custom recipe based on your
+        preferences!
+      </h6>
+      <div className="col-12 col-md-8 text-center">
+        <Link className="quiz btn btn-warning" role="button" to="/coffee-quiz">
+          Coffee Quiz <i className="fa fa-coffee" />
+        </Link>
       </div>
     </div>
   );

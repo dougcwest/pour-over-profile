@@ -3,7 +3,8 @@ import { FETCH_COFFEE } from '../actions';
 const defaultState = [
   {
     method: 'Chemex',
-    description: 'Brew Charactaristics: yada yada yada yada',
+    description:
+      'Famous for its elegant design, Chemex produces and light, balanced, and clean cup of coffee with balanced acidity and fruit forward flavors.',
     coffee: 'Single Origin: Peru, Ethiopia, Guatemala',
     roast: 'light to medium',
     main_icon: 'https://i.ibb.co/D9qqt4r/chemex-icon-white.png',
@@ -24,7 +25,8 @@ const defaultState = [
 
   {
     method: 'AeroPress',
-    description: 'Brew Charactaristics: yada yada yada yada',
+    description:
+      'The fastest of these pour-over methods, AeroPress is known for its versatility. Varying immersion time, grind, and plunge can produce a range of results from bright and lively, to round and bold.',
     coffee: 'Blend / Espresso Blend',
     roast: 'medium to dark',
     main_icon: 'https://i.ibb.co/9ZcxDHb/aeropress-icon-white.png',
@@ -45,7 +47,7 @@ const defaultState = [
 
   {
     method: 'Clever Dripper',
-    description: `Brew Charactaristics: yada yada yada yada`,
+    description: `Combining the full immersion of French Press with the paper filtration of pour-over coffee makers, the Clever Dripper produces a fuller-boddied, roastier flavored cup.`,
     coffee: 'Blend / Single Origin: Brazil, Costa Rica',
     roast: 'medium',
     email: 'thebossh@dundermif.com',
