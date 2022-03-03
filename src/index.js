@@ -17,6 +17,8 @@ import Header from './components/header';
 import reducers from './reducers';
 import NavBar from './components/nav-bar';
 
+// require('dotenv').config();
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
@@ -25,6 +27,7 @@ ReactDOM.render(
       <Header>
         <NavBar />
         <Switch>
+          <Route path="recipes/new" component={CoffeeQuiz} />
           <Route exact path="/" component={CoffeeIndex} />
           <Route path="/coffee-quiz" component={CoffeeQuiz} />
           <Route path="/recipe/:id" component={RecipeDetails} />

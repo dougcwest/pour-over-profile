@@ -1,17 +1,40 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { useRef, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { createRecipe } from '../actions';
 
-const CoffeeQuiz = () => {
+const CoffeeQuiz = (props) => {
   const [strength, setStrength] = useState('Default');
   const [flavors, setFlavors] = useState('Default');
   const [temp, setTemp] = useState('Default');
   const [speed, setSpeed] = useState('Default');
   const [experience, setExperience] = useState('Default');
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(
+      createRecipe({
+        strength,
+        flavors,
+        temp,
+        speed,
+        experience,
+      })
+    );
+
+    // eslint-disable-next-line react/destructuring-assignment, react/prop-types
+    props.history.push('/recipe/1');
+  };
+
   return (
     <div>
       <div className="CoffeeQuiz">
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicSelect">
             <Form.Label>
               <h6 className="text-dark">How Strong Do You Like It?</h6>
