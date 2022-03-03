@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { createRecipe } from '../actions';
 
@@ -128,11 +128,12 @@ const CoffeeQuiz = (props) => {
             </Form.Control>
 
             <br />
-
-            <button type="submit" className="btn btn-warning add-post">
-              Get Recipe <i className="fa fa-coffee" />
-            </button>
           </Form.Group>
+          <Link to="recipe/1">
+            <Button type="submit" variant="primary">
+              Get Recipe <i className="fa fa-coffee" />
+            </Button>
+          </Link>
         </Form>
         <Link to="/">back</Link>
       </div>
