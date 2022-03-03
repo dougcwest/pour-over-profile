@@ -1,13 +1,15 @@
 const header = (props) => (
-  <div>
+  <div className="container">
     <div className="row">
-      <div className="col-md-6 offset-md-3">
+      <div className="col-12 col-md-4">
         <div className="page-header">
-          <h1>Project Pour-Over</h1>
+          <h1 className="d-flex justify-content-center text-dark">
+            Project Pour-Over
+          </h1>
         </div>
       </div>
     </div>
-    <div className="container">{props.children}</div>
+    <div className="row">{props.children}</div>
   </div>
 );
 
