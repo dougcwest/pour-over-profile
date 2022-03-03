@@ -9,6 +9,7 @@ import {
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
+  getDetails,
 } from 'use-places-autocomplete';
 
 import {
@@ -35,6 +36,7 @@ const containerStyle = {
 function RenderMap() {
   const [marker, setMarker] = useState({ lat: 35.72718, lng: -78.854149 });
   const [selected, setSelected] = useState(null);
+  const [resultsArray, setResultsArray] = useState([]);
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API,
@@ -45,12 +47,12 @@ function RenderMap() {
   const onMapLoad = useCallback((map) => {
     mapRef.current = map;
   }, []);
-  const panTo = useCallback(({ lat, lng }) => {
+  const panTo = useCallback(({ lat, lng, results }) => {
     setMarker({ lat, lng });
+    setResultsArray({ results });
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(14);
   }, []);
-
   if (loadError) return 'Error Loading Map';
   if (!isLoaded) return 'Loading Map';
 
@@ -65,10 +67,7 @@ function RenderMap() {
         center={{ lat: 35.72718, lng: -78.854149 }}
         zoom={10}
       >
-        <Marker
-          position={marker}
-          onClick={(description) => console.log(description)}
-        >
+        <Marker position={marker} onClick={() => setSelected(marker)}>
           {selected ? (
             <InfoWindow
               position={marker}
@@ -77,7 +76,7 @@ function RenderMap() {
               }}
             >
               <div>
-                <p>test</p>
+                <p>{resultsArray.results[0].formatted_address}</p>
               </div>
             </InfoWindow>
           ) : null}
@@ -114,7 +113,7 @@ function Search({ panTo }) {
     try {
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
-      panTo({ lat, lng });
+      panTo({ lat, lng, results });
     } catch (error) {
       console.log('😱 Error: ', error);
     }
