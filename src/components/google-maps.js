@@ -64,9 +64,8 @@ function RenderMap() {
 
   return (
     <div>
-      <h1>Find Coffee!</h1>
+      <h5 className="map-header">Find Pour-Over Coffee Near You!</h5>
       <Search panTo={panTo} findMe={findMe} />
-      {/* <Locate findMe={findMe} /> */}
       <GoogleMap
         onLoad={onMapLoad}
         options={options}
