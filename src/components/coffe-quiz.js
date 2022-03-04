@@ -1,7 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { fetchCoffee } from '../actions';
 
 const CoffeeQuiz = (props) => {
   const [strength, setStrength] = useState('Default');
@@ -10,7 +12,10 @@ const CoffeeQuiz = (props) => {
   const [speed, setSpeed] = useState('Default');
   const [experience, setExperience] = useState('Default');
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCoffee());
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,9 +41,9 @@ const CoffeeQuiz = (props) => {
               value={strength}
               onChange={(e) => {
                 setStrength(e.target.value);
-                console.log(strength);
               }}
             >
+              <option>Select Strength</option>
               <option value="light">Light and aromatic</option>
               <option value="smooth">Smooth and balanced</option>
               <option value="bold">Bold and roasty</option>
@@ -54,13 +59,13 @@ const CoffeeQuiz = (props) => {
               value={flavors}
               onChange={(e) => {
                 setFlavors(e.target.value);
-                console.log(flavors);
               }}
             >
-              <option value="1">Citrus and mineral</option>
-              <option value="2">Stonefruit and earth</option>
-              <option value="3">Berry and chocolate</option>
-              <option value="4">Caramel and roasted nuts</option>
+              <option>Select Flavors</option>
+              <option value="citrus">Citrus and mineral</option>
+              <option value="stonefruit">Stonefruit and earth</option>
+              <option value="berry">Berry and chocolate</option>
+              <option value="caramel">Caramel and roasted nuts</option>
             </Form.Select>
 
             <br />
@@ -75,8 +80,9 @@ const CoffeeQuiz = (props) => {
                 setTemp(e.target.value);
               }}
             >
-              <option value="1">Hot</option>
-              <option value="2">Cold</option>
+              <option>Select Temp</option>
+              <option value="hot">Hot</option>
+              <option value="cold">Cold</option>
             </Form.Control>
 
             <br />
@@ -91,9 +97,10 @@ const CoffeeQuiz = (props) => {
                 setSpeed(e.target.value);
               }}
             >
-              <option value="1">Yesterday</option>
-              <option value="2">I don't mind waiting a bit</option>
-              <option value="3">I want to savor the process</option>
+              <option>Select Wait Time</option>
+              <option value="fast">Yesterday</option>
+              <option value="medium">I don't mind waiting a bit</option>
+              <option value="slow">I want to savor the process</option>
             </Form.Control>
 
             <br />
@@ -110,19 +117,19 @@ const CoffeeQuiz = (props) => {
                 setExperience(e.target.value);
               }}
             >
-              <option value="default">Choose One...</option>
-              <option value="1">Trying it out</option>
-              <option value="2">Some. Looking for better results</option>
-              <option value="3">Confident. Expirementing with recipes.</option>
+              <option value="default">Select your experience</option>
+              <option value="trying">Trying it out</option>
+              <option value="some">Some. Looking for better results</option>
+              <option value="confident">
+                Confident. Expirementing with recipes.
+              </option>
             </Form.Control>
 
             <br />
           </Form.Group>
-          <Link to="recipe/1">
-            <Button id="get" type="submit" variant="warning">
-              Get Recipe <i className="fa fa-coffee" />
-            </Button>
-          </Link>
+          <Button id="get" type="submit" variant="warning">
+            Get Recipe <i className="fa fa-coffee" />
+          </Button>
         </Form>
         <Link to="/">
           <i className="back fa fa-arrow-left fa-lg" />
