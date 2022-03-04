@@ -9,7 +9,6 @@ import {
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
-  getDetails,
 } from 'use-places-autocomplete';
 
 import {
@@ -34,7 +33,7 @@ const containerStyle = {
 };
 
 function RenderMap() {
-  const [marker, setMarker] = useState({ lat: 35.72718, lng: -78.854149 });
+  const [marker, setMarker] = useState(null);
   const [selected, setSelected] = useState(null);
   const [resultsArray, setResultsArray] = useState([]);
 
@@ -47,19 +46,26 @@ function RenderMap() {
   const onMapLoad = useCallback((map) => {
     mapRef.current = map;
   }, []);
+
   const panTo = useCallback(({ lat, lng, results }) => {
     setMarker({ lat, lng });
     setResultsArray({ results });
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(14);
   }, []);
+
+  const findMe = useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(14);
+  }, []);
+
   if (loadError) return 'Error Loading Map';
   if (!isLoaded) return 'Loading Map';
 
   return (
     <div>
       <h5 className="map-header">Find Pour-Over Coffee Near You!</h5>
-      <Search panTo={panTo} />
+      <Search panTo={panTo} findMe={findMe} />
       <GoogleMap
         onLoad={onMapLoad}
         options={options}
@@ -87,7 +93,7 @@ function RenderMap() {
 }
 
 // eslint-disable-next-line react/prop-types
-function Search({ panTo }) {
+function Search({ panTo, findMe }) {
   const {
     ready,
     value,
@@ -120,14 +126,32 @@ function Search({ panTo }) {
   };
 
   return (
-    <div>
+    <div className="search">
       <Combobox onSelect={handleSelect}>
         <ComboboxInput
+          className="coffeeSearchInput"
           value={value}
           onChange={handleInput}
           disabled={!ready}
           placeholder="Find some coffee!"
         />
+        <button
+          type="button"
+          className="btn btn-success btn-sm coffeeLocateButton"
+          onClick={() => {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                findMe({
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+                });
+              },
+              () => console.log('Error')
+            );
+          }}
+        >
+          Find my Location!
+        </button>
         <ComboboxPopover>
           <ComboboxList>
             {status === 'OK' &&

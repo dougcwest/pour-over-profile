@@ -99,3 +99,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.coffeeSearchInput {
+  width: 79.5%;
+}
+
+.coffeeLocateButton {
+  margin-bottom: 4px;
+  margin-left: 10px;
+}
