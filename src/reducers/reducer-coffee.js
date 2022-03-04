@@ -90,6 +90,52 @@ const defaultState = [
       total_brew_time: '2 minutes, 30 seconds',
       showModal: false,
     },
+    needed_items: {
+      coffee_maker: 'An AeroPress Coffee Maker',
+      coffee_link:
+        'https://www.amazon.com/AeroPress-Coffee-Espresso-Maker-Bitterness/dp/B0047BIWSK',
+      beans_rec:
+        'https://www.mistobox.com/media/catalog/product/cache/0/image/450x450/9df78eab33525d08d6e5fb8d27136e95/O/C/OCL-036_2.jpg',
+      beans_link: 'https://onyxcoffeelab.com/products/southern-weather',
+      kettle: 'Any brand of pouring kettle, preferably goosenecked.',
+      kettle_link:
+        'https://www.amazon.com/Bonavita-BV382510V-Variable-Temperature-Gooseneck/dp/B005YR0F40',
+      scale: 'A food scale that can measure in grams',
+      scale_link:
+        'https://www.amazon.com/Taylor-Precision-Products-1020NFS-Aquatronic/dp/B00YIM4QRE/ref=sr_1_5?keywords=taylor+food+scale&qid=1646401753&sr=8-5',
+      filter: 'One AeroPress Microfilter',
+      filter_link:
+        'https://www.amazon.com/AeroPress-Replacement-Filter-Pack-Microfilters/dp/B000LTOCSG',
+    },
+    instructions: {
+      step_1:
+        'Weigh out the coffee to 32 grams and gind to medium-coarse. (roughly the size of sea salt)',
+      step_1_img: 'https://i.ibb.co/5jbw2Yv/coffe-grounds.png',
+      step_2:
+        'Unfold the filter and place it in the Chemex, with the triple-folded side against the pour spout.',
+      step_2_img: 'https://i.ibb.co/d5RkxVr/chemex-filter.png',
+      step_3:
+        'Thoroughly rinse the filter with hot water to remove the taste of the paper and pre-heat the Chemex. Discard the water through the spout.',
+      step_3_img: 'https://i.ibb.co/0hzCtdz/02-TRD20-Chemex-Wash-Filter2.png',
+      step_4:
+        'Pour the ground coffee into the filter and gently shake the Chemex, creating an even bed to pour over.',
+      step_4_img: 'https://i.ibb.co/ynHmZxB/Chemex-grounds.png',
+      step_5:
+        'Starting at the center of the bed, slowly and evenly pour 65 grams of water, moving outward in concentric circles. Let the coffee "bloom" for 45 seconds.',
+      step_5_img: 'https://i.ibb.co/QQn9ZxF/chemex-bloom.png',
+      step_6:
+        'Using the same pouring pattern, gently add water until the scale reads 300 grams. Let the water draw down until the slurry sits about an inch above the bottom of the filter.',
+      step_6_img: 'https://i.ibb.co/BBmvqd2/chemex-pour.png',
+      step_7:
+        'Repeat the previous step, this time with a center pour instead of circles. Fill until the scale reads 512 grams.',
+      step_7_img: '',
+      step_8:
+        'Allow the coffee to draw down into the basin. Once the grounds are dry, remove the filter and compost it. Give the Chemex a good swirl to aerate the coffee.',
+      step_8_img: 'https://i.ibb.co/XFbtVxX/chemex-full.png',
+      step_9:
+        'Pre-heat your coffee cup with the remaining hot water in your kettle. Swirl and discard. Pour your delicious coffee and enjoy!',
+      step_9_img: 'https://i.ibb.co/ChPc9Fm/drinking-coffee.png',
+    },
     id: 2,
   },
 
@@ -112,6 +158,52 @@ const defaultState = [
       bloom_time: '2 minutes',
       total_brew_time: '3 minutes, 45 seconds',
       showModal: false,
+    },
+    needed_items: {
+      coffee_maker: 'A Chemex 6 or 8 Cup Pour-Over Glass Coffee Maker',
+      coffee_link:
+        'https://www.williams-sonoma.com/products/chemex-wood-collar-glass-coffeemaker/?catalogId=79&sku=2964765&cm_ven=PLA&cm_cat=Google&cm_pla=Electrics%20%3E%20Coffee%20Makers&region_id=680400&cm_ite=2964765_14571727863&gclid=CjwKCAiAjoeRBhAJEiwAYY3nDIQuiZ3UDSTSQtOIqjOk3E0a2MDIlvfVl9vi_EOOSggsiUq-l5k_bRoCsxoQAvD_BwE',
+      beans_rec:
+        'https://counterculturecoffee.com/wp-content/uploads/2020/06/Idido_12oz_bag_2020-e1621010055615-600x600.png',
+      beans_link: 'https://counterculturecoffee.com/shop/coffee/idido',
+      kettle: 'Any brand of pouring kettle, preferably goosenecked.',
+      kettle_link:
+        'https://www.amazon.com/Bonavita-BV382510V-Variable-Temperature-Gooseneck/dp/B005YR0F40',
+      scale: 'A food scale that can measure in grams',
+      scale_link:
+        'https://www.amazon.com/Taylor-Precision-Products-1020NFS-Aquatronic/dp/B00YIM4QRE/ref=sr_1_5?keywords=taylor+food+scale&qid=1646401753&sr=8-5',
+      filter: 'One Chemex bonded natural filter',
+      filter_link:
+        'https://www.amazon.com/Chemex-Natural-Coffee-Filters-Square/dp/B017OFOP68',
+    },
+    instructions: {
+      step_1:
+        'Weigh out the coffee to 32 grams and gind to medium-coarse. (roughly the size of sea salt)',
+      step_1_img: 'https://i.ibb.co/5jbw2Yv/coffe-grounds.png',
+      step_2:
+        'Unfold the filter and place it in the Chemex, with the triple-folded side against the pour spout.',
+      step_2_img: 'https://i.ibb.co/d5RkxVr/chemex-filter.png',
+      step_3:
+        'Thoroughly rinse the filter with hot water to remove the taste of the paper and pre-heat the Chemex. Discard the water through the spout.',
+      step_3_img: 'https://i.ibb.co/0hzCtdz/02-TRD20-Chemex-Wash-Filter2.png',
+      step_4:
+        'Pour the ground coffee into the filter and gently shake the Chemex, creating an even bed to pour over.',
+      step_4_img: 'https://i.ibb.co/ynHmZxB/Chemex-grounds.png',
+      step_5:
+        'Starting at the center of the bed, slowly and evenly pour 65 grams of water, moving outward in concentric circles. Let the coffee "bloom" for 45 seconds.',
+      step_5_img: 'https://i.ibb.co/QQn9ZxF/chemex-bloom.png',
+      step_6:
+        'Using the same pouring pattern, gently add water until the scale reads 300 grams. Let the water draw down until the slurry sits about an inch above the bottom of the filter.',
+      step_6_img: 'https://i.ibb.co/BBmvqd2/chemex-pour.png',
+      step_7:
+        'Repeat the previous step, this time with a center pour instead of circles. Fill until the scale reads 512 grams.',
+      step_7_img: '',
+      step_8:
+        'Allow the coffee to draw down into the basin. Once the grounds are dry, remove the filter and compost it. Give the Chemex a good swirl to aerate the coffee.',
+      step_8_img: 'https://i.ibb.co/XFbtVxX/chemex-full.png',
+      step_9:
+        'Pre-heat your coffee cup with the remaining hot water in your kettle. Swirl and discard. Pour your delicious coffee and enjoy!',
+      step_9_img: 'https://i.ibb.co/ChPc9Fm/drinking-coffee.png',
     },
     id: 3,
   },
