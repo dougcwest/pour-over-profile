@@ -43,6 +43,15 @@ h6 {
   padding: 15px;
 }
 
+.needed-items a {
+  font-size: small;
+  text-decoration: none;
+}
+
+.needed-items {
+  padding-bottom: 10px;
+}
+
 .bean-icon {
   width: 20px;
   height: 20px;

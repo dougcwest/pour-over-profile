@@ -21,6 +21,23 @@ const defaultState = [
       total_brew_time: '4 minutes, 30 seconds',
       showModal: false,
     },
+    needed_items: {
+      coffee_maker: 'A Chemex 6 or 8 Cup Pour-Over Glass Coffee Maker',
+      coffee_link:
+        'https://www.williams-sonoma.com/products/chemex-wood-collar-glass-coffeemaker/?catalogId=79&sku=2964765&cm_ven=PLA&cm_cat=Google&cm_pla=Electrics%20%3E%20Coffee%20Makers&region_id=680400&cm_ite=2964765_14571727863&gclid=CjwKCAiAjoeRBhAJEiwAYY3nDIQuiZ3UDSTSQtOIqjOk3E0a2MDIlvfVl9vi_EOOSggsiUq-l5k_bRoCsxoQAvD_BwE',
+      beans_rec:
+        'https://counterculturecoffee.com/wp-content/uploads/2020/06/Idido_12oz_bag_2020-e1621010055615-600x600.png',
+      beans_link: 'https://counterculturecoffee.com/shop/coffee/idido',
+      kettle: 'Any brand of pouring kettle, preferably goosenecked.',
+      kettle_link:
+        'https://www.amazon.com/Bonavita-BV382510V-Variable-Temperature-Gooseneck/dp/B005YR0F40',
+      scale: 'A food scale that can measure in grams',
+      scale_link:
+        'https://www.amazon.com/Taylor-Precision-Products-1020NFS-Aquatronic/dp/B00YIM4QRE/ref=sr_1_5?keywords=taylor+food+scale&qid=1646401753&sr=8-5',
+      filter: 'One Chemex bonded natural filter',
+      filter_link:
+        'https://www.amazon.com/Chemex-Natural-Coffee-Filters-Square/dp/B017OFOP68',
+    },
     instructions: {
       step_1:
         'Weigh out the coffee to 32 grams and gind to medium-coarse. (roughly the size of sea salt)',
