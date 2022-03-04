@@ -94,8 +94,7 @@ const defaultState = [
       coffee_maker: 'An AeroPress Coffee Maker',
       coffee_link:
         'https://www.amazon.com/AeroPress-Coffee-Espresso-Maker-Bitterness/dp/B0047BIWSK',
-      beans_rec:
-        'https://www.mistobox.com/media/catalog/product/cache/0/image/450x450/9df78eab33525d08d6e5fb8d27136e95/O/C/OCL-036_2.jpg',
+      beans_rec: 'https://i.ibb.co/0mMS5vZ/onyx-southern-weather.png',
       beans_link: 'https://onyxcoffeelab.com/products/southern-weather',
       kettle: 'Any brand of pouring kettle, preferably goosenecked.',
       kettle_link:
@@ -109,17 +108,18 @@ const defaultState = [
     },
     instructions: {
       step_1:
-        'Weigh out the coffee to 32 grams and gind to medium-coarse. (roughly the size of sea salt)',
-      step_1_img: 'https://i.ibb.co/5jbw2Yv/coffe-grounds.png',
+        'Weigh out the coffee to 18 grams and gind to a medium-fine coarseness.',
+      step_1_img: 'https://i.ibb.co/VYq966s/fine-grounds.png',
       step_2:
-        'Unfold the filter and place it in the Chemex, with the triple-folded side against the pour spout.',
-      step_2_img: 'https://i.ibb.co/d5RkxVr/chemex-filter.png',
+        'Place the paper microfilter into the removable end cap of the AeroPress. Rest the cap over your cup and rinse the filter with hot water. Swirl and discard the water from the cup.',
+      step_2_img: 'https://i.ibb.co/B4L57sn/aerowetfilter.png',
       step_3:
-        'Thoroughly rinse the filter with hot water to remove the taste of the paper and pre-heat the Chemex. Discard the water through the spout.',
-      step_3_img: 'https://i.ibb.co/0hzCtdz/02-TRD20-Chemex-Wash-Filter2.png',
+        'Twist the cap onto the bottom of the main AeroPress cylinder, using the provided funnel, pour in the coffee grounds, and shake to create an even bed.',
+      step_3_img: 'https://i.ibb.co/3Y06SnB/Aeropress.png',
       step_4:
         'Pour the ground coffee into the filter and gently shake the Chemex, creating an even bed to pour over.',
-      step_4_img: 'https://i.ibb.co/ynHmZxB/Chemex-grounds.png',
+      step_4_img:
+        'https://cdn.shopify.com/s/files/1/0259/2273/2141/files/AeroPress_Brewing_guide-WATER_POUR-1.jpg',
       step_5:
         'Starting at the center of the bed, slowly and evenly pour 65 grams of water, moving outward in concentric circles. Let the coffee "bloom" for 45 seconds.',
       step_5_img: 'https://i.ibb.co/QQn9ZxF/chemex-bloom.png',
