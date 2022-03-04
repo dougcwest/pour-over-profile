@@ -30,12 +30,26 @@
   text-align: left !important;
 }
 
+h6 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .find {
   padding: 15px;
 }
 
 .take {
   padding: 15px;
+}
+
+.needed-items a {
+  font-size: small;
+  text-decoration: none;
+}
+
+.needed-items {
+  padding-bottom: 10px;
 }
 
 .bean-icon {
@@ -52,6 +66,24 @@
   margin-top: 7px;
   margin-bottom: 15px;
   width: 50%;
+}
+
+#get {
+  margin-top: 7px;
+  margin-bottom: 15px;
+  margin-left: 80px;
+  width: 50%;
+}
+
+.recipe {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.back {
+  padding-bottom: 10px;
 }
 
 .body {
