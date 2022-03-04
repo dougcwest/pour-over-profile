@@ -15,6 +15,13 @@ const CoffeeIndex = () => {
   }, [fetchCoffee]);
   return (
     <div>
+      <p className="text-muted text-center">
+        <strong>
+          ...is a resource for those who are new to making pour-over coffee.
+          Browse through the provided methods to get sample recipes or take the
+          Coffee Quiz below to get a custom recipe.
+        </strong>
+      </p>
       <div className="col-12 col-md-8 d-flex align-items-center">
         <h4 className="text-dark">The Methods</h4>
       </div>
@@ -59,15 +66,13 @@ const CoffeeIndex = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 text-right">
-              <Link
-                className=" btn btn-link btn-sm"
-                role="button"
-                to="/recipe/2"
-              >
-                Sample Recipe
-              </Link>
-            </div>
+            <Link
+              className="sample btn btn-link btn-sm"
+              role="button"
+              to="/recipe/2"
+            >
+              Sample Recipe
+            </Link>
           </div>
         ))}
       </div>
