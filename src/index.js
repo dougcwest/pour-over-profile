@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
-
+import Timer from './components/timer';
 import CoffeeIndex from './components/coffee-index';
 import CoffeeQuiz from './components/coffe-quiz';
 import RecipeDetails from './components/recipe-details';
@@ -30,6 +30,7 @@ ReactDOM.render(
           <Route path="recipes/new" component={CoffeeQuiz} />
           <Route exact path="/" component={CoffeeIndex} />
           <Route path="/coffee-quiz" component={CoffeeQuiz} />
+          <Route path="/brew-timer" component={Timer} />
           <Route path="/recipe/:id" component={RecipeDetails} />
         </Switch>
       </Header>
