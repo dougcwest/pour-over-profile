@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import renderMap from './google-maps';
+import Timer from './timer';
 
 const RecipeDetails = (props) => {
   const recipe = useSelector(({ coffee }) =>
@@ -125,18 +126,21 @@ const RecipeDetails = (props) => {
           alt="ground-coffee"
         />
         <h6 className="text-muted">{recipe.instructions.step_5}</h6>
+        <Timer />
         <img
           className="recipe mx-auto d-block"
           src={recipe.instructions.step_5_img}
           alt="ground-coffee"
         />
         <h6 className="text-muted">{recipe.instructions.step_6}</h6>
+        <Timer />
         <img
           className="recipe mx-auto d-block"
           src={recipe.instructions.step_6_img}
           alt="ground-coffee"
         />
         <h6 className="text-muted">{recipe.instructions.step_7}</h6>
+        <Timer />
         <h6 className="text-muted">{recipe.instructions.step_8}</h6>
         <img
           className="recipe mx-auto d-block"
