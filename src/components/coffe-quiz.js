@@ -1,9 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useRef, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { createRecipe } from '../actions';
 
 const CoffeeQuiz = (props) => {
   const [strength, setStrength] = useState('Default');
@@ -12,23 +10,17 @@ const CoffeeQuiz = (props) => {
   const [speed, setSpeed] = useState('Default');
   const [experience, setExperience] = useState('Default');
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(
-      createRecipe({
-        strength,
-        flavors,
-        temp,
-        speed,
-        experience,
-      })
-    );
-
-    // eslint-disable-next-line react/destructuring-assignment, react/prop-types
-    props.history.push('/recipe/1');
+    if (strength === 'bold') {
+      // eslint-disable-next-line react/destructuring-assignment, react/prop-types
+      props.history.push('recipe/1');
+    } else if (strength === 'smooth') {
+      // eslint-disable-next-line react/destructuring-assignment, react/prop-types
+      props.history.push('recipe/3');
+    }
   };
 
   return (
@@ -44,13 +36,13 @@ const CoffeeQuiz = (props) => {
               value={strength}
               onChange={(e) => {
                 setStrength(e.target.value);
+                console.log(strength);
               }}
             >
-              <option value="default">Choose One...</option>
-              <option value="1">Light and aromatic</option>
-              <option value="2">Smooth and balanced</option>
-              <option value="3">Bold and roasty</option>
-              <option value="3">Kill my tastebuds</option>
+              <option value="light">Light and aromatic</option>
+              <option value="smooth">Smooth and balanced</option>
+              <option value="bold">Bold and roasty</option>
+              <option value="kill">Kill my tastebuds</option>
             </Form.Control>
 
             <br />
@@ -58,19 +50,18 @@ const CoffeeQuiz = (props) => {
             <Form.Label>
               <h6 className="text-dark">Which Flavors Appeal To You?</h6>
             </Form.Label>
-            <Form.Control
-              as="select"
+            <Form.Select
               value={flavors}
               onChange={(e) => {
                 setFlavors(e.target.value);
+                console.log(flavors);
               }}
             >
-              <option value="default">Choose One...</option>
               <option value="1">Citrus and mineral</option>
               <option value="2">Stonefruit and earth</option>
               <option value="3">Berry and chocolate</option>
-              <option value="3">Caramel and roasted nuts</option>
-            </Form.Control>
+              <option value="4">Caramel and roasted nuts</option>
+            </Form.Select>
 
             <br />
 
@@ -84,7 +75,6 @@ const CoffeeQuiz = (props) => {
                 setTemp(e.target.value);
               }}
             >
-              <option value="default">Choose One...</option>
               <option value="1">Hot</option>
               <option value="2">Cold</option>
             </Form.Control>
@@ -101,7 +91,6 @@ const CoffeeQuiz = (props) => {
                 setSpeed(e.target.value);
               }}
             >
-              <option value="default">Choose One...</option>
               <option value="1">Yesterday</option>
               <option value="2">I don't mind waiting a bit</option>
               <option value="3">I want to savor the process</option>
@@ -130,12 +119,14 @@ const CoffeeQuiz = (props) => {
             <br />
           </Form.Group>
           <Link to="recipe/1">
-            <Button type="submit" variant="primary">
+            <Button id="get" type="submit" variant="warning">
               Get Recipe <i className="fa fa-coffee" />
             </Button>
           </Link>
         </Form>
-        <Link to="/">back</Link>
+        <Link to="/">
+          <i className="back fa fa-arrow-left fa-lg" />
+        </Link>
       </div>
     </div>
   );

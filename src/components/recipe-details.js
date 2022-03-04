@@ -12,7 +12,9 @@ const RecipeDetails = (props) => {
 
   return (
     <div>
-      <Link to="/">Back To Index</Link>
+      <Link to="/">
+        <i className="back fa fa-arrow-left fa-lg" />
+      </Link>
       <h1>{recipe.method} Recipe</h1>
       <hr />
       <table className="table">
@@ -47,6 +49,58 @@ const RecipeDetails = (props) => {
           </tr>
         </tbody>
       </table>
+      <div className="col-12 col-md-4">
+        <h1 className="text-dark">Instructions:</h1>
+        <h6 className="text-muted">{recipe.instructions.step_1}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_1_img}
+          alt="ground-coffee"
+        />
+        <h6 className="text-muted">{recipe.instructions.step_2}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_2_img}
+          alt="ground-coffee"
+        />
+        <h6 className="text-muted">{recipe.instructions.step_3}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_3_img}
+          alt="ground-coffee"
+        />
+        <h6 className="text-muted">{recipe.instructions.step_4}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_4_img}
+          alt="ground-coffee"
+        />
+        <h6 className="text-muted">{recipe.instructions.step_5}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_5_img}
+          alt="ground-coffee"
+        />
+        <h6 className="text-muted">{recipe.instructions.step_6}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_6_img}
+          alt="ground-coffee"
+        />
+        <h6 className="text-muted">{recipe.instructions.step_7}</h6>
+        <h6 className="text-muted">{recipe.instructions.step_8}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_8_img}
+          alt="ground-coffee"
+        />
+        <h6 className="text-muted">{recipe.instructions.step_9}</h6>
+        <img
+          className="recipe mx-auto d-block"
+          src={recipe.instructions.step_9_img}
+          alt="ground-coffee"
+        />
+      </div>
       {renderMap()}
     </div>
   );
