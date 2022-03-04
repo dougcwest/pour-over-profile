@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {
   GoogleMap,
@@ -10,7 +10,7 @@ import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
 } from 'use-places-autocomplete';
-
+import { FaLocationArrow } from 'react-icons/fa';
 import {
   Combobox,
   ComboboxInput,
@@ -64,7 +64,7 @@ function RenderMap() {
 
   return (
     <div>
-      <h5 className="map-header">Find Pour-Over Coffee Near You!</h5>
+      <h5 className="map-header">Find Pour-Over Coffee Near You! </h5>
       <Search panTo={panTo} findMe={findMe} />
       <GoogleMap
         onLoad={onMapLoad}
@@ -150,7 +150,7 @@ function Search({ panTo, findMe }) {
             );
           }}
         >
-          Find my Location!
+          <FaLocationArrow />
         </button>
         <ComboboxPopover>
           <ComboboxList>
